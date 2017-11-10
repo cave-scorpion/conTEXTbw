@@ -19,6 +19,10 @@ import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 import android.text.TextUtils;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -34,10 +38,14 @@ import java.util.List;
  * API Guide</a> for more information on developing a Settings UI.
  */
 public class SettingsActivity extends AppCompatPreferenceActivity {
+    Spinner spinner;
+    ArrayAdapter<CharSequence> adapter;
+
     /**
      * A preference value change listener that updates the preference's summary
      * to reflect its new value.
      */
+
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
         public boolean onPreferenceChange(Preference preference, Object value) {
@@ -116,11 +124,13 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                         .getString(preference.getKey(), ""));
     }
 
+//Edited
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupActionBar();
-    }
+}
 
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
@@ -252,3 +262,4 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         }
     }
 }
+

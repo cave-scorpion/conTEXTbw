@@ -1,7 +1,13 @@
 <resources>
-    <string name="app_name">conTextbw</string>
+    <string name="app_name">conText</string>
 
     <!-- Strings related to Settings -->
+    <string name="choose_tone">Choose a tone</string>
+    <string-array name="tone_list">
+        <item>Tone 1</item>
+        <item>Tone 2</item>
+        <item>Tone 3</item>
+    </string-array>
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
