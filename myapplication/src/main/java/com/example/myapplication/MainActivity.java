@@ -12,40 +12,106 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Spinner spinnerAF, spinnerCO, spinnerFP, spinnerHA, spinnerNN, spinnerOMW;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        spinnerAF = findViewById(R.id.spinnerAF);
-        spinnerCO = findViewById(R.id.spinnerCO);
-        spinnerFP = findViewById(R.id.spinnerFP);
-        spinnerHA = findViewById(R.id.spinnerHA);
-        spinnerNN = findViewById(R.id.spinnerNN);
-        spinnerOMW = findViewById(R.id.spinnerOMW);
+        final Spinner spinnerAF = (Spinner) findViewById(R.id.spinnerAF);
+        Spinner spinnerCO = (Spinner) findViewById(R.id.spinnerCO);
+        Spinner spinnerFP = (Spinner) findViewById(R.id.spinnerFP);
+        Spinner spinnerHA = (Spinner) findViewById(R.id.spinnerHA);
+        Spinner spinnerNN = (Spinner) findViewById(R.id.spinnerNN);
+        Spinner spinnerOMW = (Spinner) findViewById(R.id.spinnerOMW);
 
-        final List<String> toneList = new ArrayList<String>();
-                toneList.add("Tone 1");
-                toneList.add("Tone 2");
-                toneList.add("Tone 3");
-                toneList.add("Tone 4");
-                toneList.add("Tone 5");
-                toneList.add("Tone 6");
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MainActivity.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.spinner_text));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-                ArrayAdapter<String> simpleAdapter = new ArrayAdapter<>(MainActivity.this,R.layout.support_simple_spinner_dropdown_item,toneList);
-                spinnerAF.setAdapter(simpleAdapter);
-//                spinnerCO.setAdapter(simpleAdapter);
-//                spinnerFP.setAdapter(simpleAdapter);
-//                spinnerHA.setAdapter(simpleAdapter);
-//                spinnerNN.setAdapter(simpleAdapter);
-//                spinnerOMW.setAdapter(simpleAdapter);
+        spinnerAF.setAdapter(myAdapter);
+        spinnerAF.setSelection(0);
+        spinnerCO.setAdapter(myAdapter);
+        spinnerCO.setSelection(1);
+        spinnerFP.setAdapter(myAdapter);
+        spinnerFP.setSelection(2);
+        spinnerHA.setAdapter(myAdapter);
+        spinnerHA.setSelection(3);
+        spinnerNN.setAdapter(myAdapter);
+        spinnerNN.setSelection(4);
+        spinnerOMW.setAdapter(myAdapter);
+        spinnerOMW.setSelection(5);
 
-                spinnerAF.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        Toast.makeText(MainActivity.this, toneList.get(i), Toast.LENGTH_LONG.show());
-                    }
-                });
+        spinnerAF.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                final String AFtone = spinnerAF.getSelectedItem().toString();
+                Toast.makeText(getApplicationContext(), AFtone, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        spinnerCO.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //String COtone = spinnerCO.getSelectedItem().toString();
+                //Toast.makeText(getApplicationContext(), COtone, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        spinnerFP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //String FPtone = spinnerFP.getSelectedItem().toString();
+                //Toast.makeText(getApplicationContext(), FPtone, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        spinnerHA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //String HAtone = spinnerHA.getSelectedItem().toString();
+                //Toast.makeText(getApplicationContext(), HAtone, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        spinnerNN.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //String NNtone = spinnerNN.getSelectedItem().toString();
+                //Toast.makeText(getApplicationContext(), NNtone, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        spinnerOMW.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //String OMWtone = spinnerOMW.getSelectedItem().toString();
+                //Toast.makeText(getApplicationContext(), OMWtone, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 }

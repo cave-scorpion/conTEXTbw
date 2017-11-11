@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">conText</string>
+    <string name="app_desc">Text message classifier.</string>
+    <string name="AF">Affirmative:</string>
+    <string name="CO">Conversation:</string>
+    <string name="FP">Friend Plans:</string>
+    <string name="HA">Hahaha:</string>
+    <string name="NN">Nonpersonal Notification:</string>
+    <string name="OMW">On My Way:</string>
+    <string name="cats">Message Type:</string>
+    <string name="tone">Tone:</string>
     <string-array name="spinner_text">
-        <item>Tone 1</item>
-        <item>Tone 2</item>
-        <item>Tone 3</item>
+        <item>AF Tone</item>
+        <item>CO Tone</item>
+        <item>FP Tone</item>
+        <item>HA Tone</item>
+        <item>NN Tone</item>
+        <item>OMW Tone</item>
     </string-array>
 </resources>
